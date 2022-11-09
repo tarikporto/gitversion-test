@@ -8,5 +8,6 @@
 
 # Change from feature/lets-test-more
 
-explicit setting +semver: docs
+# Change from feature/123123-last-test
 
+explicit setting +docs

@@ -1,6 +1,6 @@
-major-version-bump-message: '\+semver:\s?(breaking|major)'
-minor-version-bump-message: '\+semver:\s?(feature|minor)'
-patch-version-bump-message: '\+semver:\s?(fix|patch|docs|ci)'
+major-version-bump-message: '\+(breaking|major)'
+minor-version-bump-message: '\+(feature|minor)'
+patch-version-bump-message: '\+(fix|patch|docs|ci)'
 no-bump-message: '\+semver:\s?(none|skip)'
 mode: Mainline
 branches:
@@ -22,7 +22,7 @@ branches:
   support:
     tag: 'alpha'
     increment: Patch
-    regex: ^docs[/-]|^bugfix[/-]
+    regex: ^bugfix[/-]
     source-branches:
     - develop
     - main
