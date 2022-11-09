@@ -1,5 +1,46 @@
 mode: Mainline
-branches: {}
+branches: 
+  develop:
+    tag: alpha
+    increment: Minor
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: true
+    regex: ^develop$
+    source-branches: []
+    tracks-release-branches: true
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 0
+  main:
+    tag: ''
+    increment: Patch
+    regex: ^main$
+  release:
+    tag: ''
+    increment: None
+    regex: ^releases?[/-]
+    source-branches:
+    - main
+  feature:
+    tag: '{BranchName}'
+    increment: Minor
+    regex: ^features?[/-]
+    source-branches:
+    - develop
+    - main
+  hotfix:
+    tag: beta
+    increment: Patch
+    regex: ^hotfix(es)?[/-]
+    source-branches:
+    - main
+  support:
+    tag: ''
+    increment: Patch
+    prevent-increment-of-merged-branch-version: false
+    regex: ^bugfix(es)?[/-]|^docs?[/-]
+    source-branches:
+    - main
 ignore:
   sha: []
 merge-message-formats: {}
