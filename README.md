@@ -6,4 +6,6 @@
 
 # Change from feature/testing-ft-branch-one-more-time
 
-explicit setting +semver: patch
+# Change from feature/lets-test-more
+
+explicit setting +semver: docs
