@@ -1,5 +1,17 @@
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch|docs|ci)'
+no-bump-message: '\+semver:\s?(none|skip)'
 mode: Mainline
 branches:
+  main:
+    tag: 'beta'
+    increment: Minor
+    regex: ^main$
+  develop:
+    tag: 'alpha'
+    increment: Minor
+    regex: ^develop$
   feature:
     tag: '{BranchName}'
     increment: Minor
@@ -8,18 +20,12 @@ branches:
     - develop
     - main
   support:
-    tag: ''
+    tag: 'alpha'
     increment: Patch
-    prevent-increment-of-merged-branch-version: true
-    track-merge-target: false
-    regex: ^support[/-]|^docs[/-]|^bugfix[/-]
+    regex: ^docs[/-]|^bugfix[/-]
     source-branches:
     - develop
     - main
-    tracks-release-branches: false
-    is-release-branch: false
-    is-mainline: true
-    pre-release-weight: 55000
 ignore:
   sha: []
 merge-message-formats: {}
