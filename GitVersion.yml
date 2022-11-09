@@ -1,0 +1,25 @@
+mode: Mainline
+branches:
+  feature:
+    tag: '{BranchName}'
+    increment: Minor
+    regex: ^features?[/-]
+    source-branches:
+    - develop
+    - main
+  support:
+    tag: ''
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    regex: ^support[/-]|^docs[/-]|^bugfix[/-]
+    source-branches:
+    - develop
+    - main
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: true
+    pre-release-weight: 55000
+ignore:
+  sha: []
+merge-message-formats: {}
