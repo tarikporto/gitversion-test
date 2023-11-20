@@ -1,31 +1,25 @@
 major-version-bump-message: '\+(breaking|major)'
 minor-version-bump-message: '\+(feature|minor)'
 patch-version-bump-message: '\+(fix|patch|docs|ci)'
-no-bump-message: '\+semver:\s?(none|skip)'
+no-bump-message: '\+(none|skip)'
 mode: Mainline
 branches:
   main:
-    tag: 'beta'
-    increment: Minor
+    tag: 'release'
+    increment: None
     regex: ^main$
-  develop:
-    tag: 'alpha'
-    increment: Minor
-    regex: ^develop$
   feature:
     tag: '{BranchName}'
-    increment: Minor
-    regex: ^features?[/-]
+    increment: None
+    regex: ^feature?[/-]
     source-branches:
-    - develop
-    - main
+      - main
   support:
-    tag: 'alpha'
-    increment: Patch
-    regex: ^bugfix[/-]
+    tag: '{BranchName}'
+    increment: None
+    regex: ^fix[/-]
     source-branches:
-    - develop
-    - main
+      - main
 ignore:
   sha: []
 merge-message-formats: {}
